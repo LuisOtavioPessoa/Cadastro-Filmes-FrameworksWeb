@@ -8,22 +8,34 @@ import { Container } from "react-bootstrap";
 
 const App: React.FC = () => {
   const [mostrarForm, setMostrarForm] = useState(false);
+  const [mostrarLista, setMostrarLista] = useState(true);
 
   return (
     <div>
       <Header />
       <main>
-        <br />
-        {mostrarForm && <FormContatos/>}
-        <br />
+        <br /><br />
         <Container>
-        <Button onClick={() => setMostrarForm(true)}>Cadastrar</Button>
 
-        <Button onClick={() => setMostrarForm(false)}>Listar</Button>
+        <Button onClick={() => {
+            setMostrarForm(true);
+            setMostrarLista(false);
+        }}
+        >Inserir</Button>
+
+        <Button onClick={() => {
+          setMostrarForm(false);
+          setMostrarLista(true);
+        }}
+        >Listar</Button>
+
         </Container>
-        <br /> <br />
-        <ListaContatos />
+
+        <Container> {mostrarLista && <ListaContatos/>}</Container>
+        <Container>{mostrarForm && <FormContatos/>}</Container>
+
       </main>
+
     </div>
   );
 };

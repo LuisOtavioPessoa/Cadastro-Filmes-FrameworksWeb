@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 function ButtonComponent() {
   return (
     <Container>
-      <Button href="#">Cadastrar</Button>
+      <Button href="#">Inserir</Button>
       <Button href="#">Listar</Button>
 
     </Container>

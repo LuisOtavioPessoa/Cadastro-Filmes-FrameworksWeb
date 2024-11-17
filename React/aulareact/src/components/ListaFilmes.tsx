@@ -1,4 +1,4 @@
-import { Container, Table } from "react-bootstrap";
+import { Container, Table, Button } from "react-bootstrap";
 import { listaFilmes } from "../data/ListaFilmes";
 
 export function ListaFilmes(){
@@ -12,6 +12,7 @@ export function ListaFilmes(){
                         <th>Ator</th>
                         <th>Faixa Etária</th>
                         <th>Genêro</th>
+                        <th>Operações</th>
                     </thead>
                     <tbody>
                         {listaFilmes.length > 0 && 
@@ -22,6 +23,10 @@ export function ListaFilmes(){
                                         <td>{filme.ator}</td>
                                         <td>{filme.faixaEtaria}</td>
                                         <td>{filme.genero}</td>
+                                        <td>
+                                            <Button variant="warning" className="me-2">Alterar</Button>
+                                            <Button variant="danger">Remover</Button>
+                                        </td>
                                     </tr>
                                 );
                             })}

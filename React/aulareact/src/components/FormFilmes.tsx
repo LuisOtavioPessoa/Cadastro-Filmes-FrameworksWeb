@@ -1,33 +1,33 @@
 import { Container, Form, Button } from "react-bootstrap";
 
-export function FormContatos(){
+export function FormFilmes(){
 
     return(
         <Container> 
             <Form>
                 <Form.Group className="mb-3" >
-                    <Form.Label>urlImagem</Form.Label>
+                    <Form.Label>Título:</Form.Label>
                         <Form.Control type="text"  />
                 </Form.Group>
             </Form>
 
             <Form>
                 <Form.Group className="mb-3" >
-                    <Form.Label>Nome</Form.Label>
+                    <Form.Label>Ator:</Form.Label>
                         <Form.Control type="text"  />
                 </Form.Group>
             </Form>
 
             <Form>
                 <Form.Group className="mb-3" >
-                    <Form.Label>Email</Form.Label>
+                    <Form.Label>Faixa Etária:</Form.Label>
                         <Form.Control type="text"  />
                 </Form.Group>
             </Form>
 
             <Form>
                 <Form.Group className="mb-3" >
-                    <Form.Label>Telefone</Form.Label>
+                    <Form.Label>Genêro:</Form.Label>
                         <Form.Control type="text"  />
                 </Form.Group>
             </Form>

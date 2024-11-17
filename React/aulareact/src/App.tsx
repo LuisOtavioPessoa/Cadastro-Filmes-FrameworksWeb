@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { FormContatos } from "./components/FormContatos";
+import { FormFilmes } from "./components/FormFilmes";
 import Header from "./components/Header";
-import { ListaContatos } from "./components/ListaContatos";
+import { ListaFilmes } from "./components/ListaFilmes";
 import ButtonComponent from "./components/Button"; 
 import Button from "react-bootstrap/Button";
 import { Container } from "react-bootstrap";
@@ -31,8 +31,9 @@ const App: React.FC = () => {
 
         </Container>
 
-        <Container> {mostrarLista && <ListaContatos/>}</Container>
-        <Container>{mostrarForm && <FormContatos/>}</Container>
+        <br />
+        <Container> {mostrarLista && <ListaFilmes/>}</Container>
+        <Container>{mostrarForm && <FormFilmes/>}</Container>
 
       </main>
 

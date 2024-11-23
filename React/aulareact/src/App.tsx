@@ -1,16 +1,11 @@
-import { FormFilmes } from "./components/FormFilmes";
 import { Header } from "./components/Header";
-import { ListaFilmes } from "./components/ListaFilmes";
-
 
 function App() {
-  return(
+  return (
     <div>
       <Header />
-      <ListaFilmes />
-      <FormFilmes />
     </div>
   );
 }
 
-export default App
+export default App;

@@ -18,7 +18,7 @@ export function FormFilmes() {
     return (
         <section>
             <Container className="mt-5">
-                <h2>Cadastrar Filme</h2>
+                <h2>Inserir Filme</h2>
                 <Form onSubmit={handleSubmit(handleFormSubmit)}>
                 <Form.Group className="mb-3">
                     <Form.Label>Titulo</Form.Label>

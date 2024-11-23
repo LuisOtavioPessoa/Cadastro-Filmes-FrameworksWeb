@@ -36,3 +36,18 @@ export async function deleteFilme(id: number){
         console.error(`Erro ao deletar o filme com ID ${id}: ${error.message}`);
     }
 }
+
+export async function updateFilme(id: number, data: Filme){
+    try{
+        const payload = {
+            titulo: data.titulo,
+            ator: data.ator,
+            faixaEtaria: data.faixaEtaria,
+            genero: data.genero
+        };
+        const response = await axios.put(`http://localhost:5000/filmes/${id}`,payload);
+        return response.data;
+    }catch(error: any){
+        console.error(`Erro ao atualizar o filme com ID ${id}: ${error.message}`);
+    }
+}

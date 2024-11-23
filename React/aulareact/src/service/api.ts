@@ -26,3 +26,13 @@ export async function saveDataFilmes(data:Filme){
         console.error(`Erro ao enviar os dados filme: ${error.message}`);
     }
 }
+
+export async function deleteFilme(id: number){
+    try{
+        const response = await axios.delete(`http://localhost:5000/filmes/${id}`);
+        console.log(`Filme com ID ${id} deletado com sucesso!`);
+        return response.data;
+    }catch(error: any){
+        console.error(`Erro ao deletar o filme com ID ${id}: ${error.message}`);
+    }
+}

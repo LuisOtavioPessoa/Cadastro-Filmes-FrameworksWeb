@@ -1,5 +1,5 @@
 export type Filme = {
-    id?: Number,
+    id: number,
     titulo: string,
     ator: string,
     faixaEtaria: string,

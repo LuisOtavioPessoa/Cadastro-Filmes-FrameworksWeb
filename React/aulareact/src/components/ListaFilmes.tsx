@@ -1,6 +1,6 @@
 import { Container, Table } from "react-bootstrap";
 import { useEffect, useState } from "react";
-import { fetchFilmesData } from "../service/api";
+import { deleteFilme, fetchFilmesData } from "../service/api";
 import { Filme } from "../Types/Filme";
 
 export function ListaFilmes() {
@@ -9,6 +9,11 @@ export function ListaFilmes() {
   useEffect(() => {
     fetchFilmesData(setData);
   }, []);
+
+  const handleDelete = async (id: number) =>{
+    await deleteFilme(id);
+    fetchFilmesData(setData);
+  };
 
   return (
     <section>
@@ -26,16 +31,16 @@ export function ListaFilmes() {
           </thead>
           <tbody>
             {data.length > 0 &&
-              data.map((filme, index) => {
+              data.map((filme) => {
                 return (
-                  <tr key={index}> {}
+                  <tr key={filme.id}> {}
                     <td>{filme.titulo}</td>
                     <td>{filme.ator}</td>
                     <td>{filme.faixaEtaria}</td>
                     <td>{filme.genero}</td>
                     <td>
                       <button className="btn btn-warning btn-sm me-2">Alterar</button>
-                      <button className="btn btn-danger btn-sm">Deletar</button>
+                      <button className="btn btn-danger btn-sm" onClick={() => handleDelete(filme.id)}>Deletar</button>
                     </td>
                   </tr>
                 );

@@ -3,9 +3,9 @@ import FilmeModel from "../model/Filme.js";
 export default class FilmeController{
     static async findAll(request, response){
         const filmes = await FilmeModel.findAll();
-
-        response.status(200).json(filmes);
+        response.status(200).json({ filmes }); 
     }
+    
 
     //Método CRIAR
     static async criar(request, response){
@@ -14,6 +14,8 @@ export default class FilmeController{
         const filme = {
             titulo, ator, faixaEtaria, genero
         };
+
+        console.log("Recebendo os dados do formulário:", filme);
 
         try {
             const FilmeCriado = await FilmeModel.create(filme);

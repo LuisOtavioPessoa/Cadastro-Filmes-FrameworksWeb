@@ -17,7 +17,7 @@ export default db.define("filmes",{
         allowNull: false
     },
     faixaEtaria: {
-        type: DataTypes.SMALLINT,
+        type: DataTypes.STRING(50),
         allowNull: false
     },
     genero: {

@@ -14,8 +14,11 @@ export function ListaFilmes() {
   }, []);
 
   const handleDelete = async (id: number) => {
+    const confirmar = window.confirm("Tem certeza que deseja deletar este filme?");
+    if(confirmar) {
     await deleteFilme(id);
     fetchFilmesData(setData);  // Recarregar os dados após a exclusão
+   }
   };
 
   const handleEditarClick = (filme: Filme) => {

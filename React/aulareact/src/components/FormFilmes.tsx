@@ -7,12 +7,13 @@ import { saveDataFilmes } from "../service/api";
 
 export function FormFilmes() {
 
-    const {handleSubmit, register} = useForm<Filme>();
+    const {handleSubmit, register, reset} = useForm<Filme>();
 
     const handleFormSubmit:SubmitHandler<Filme>=
     (data) =>{
         console.log(data);
         saveDataFilmes(data);
+        reset();
     }
 
     return (

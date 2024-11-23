@@ -1,60 +1,45 @@
-import { useState } from "react";
-import { Container, Form, Button } from "react-bootstrap";
-import { listaFilmes } from "../data/ListaFilmes";
+import { Button, Container, Form } from 
+"react-bootstrap";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { Filme } from "../Types/Filme";
+import { saveDataFilmes } from "../service/api";
 
-export function FormFilmes(){
 
-    const [titulo, setTitulo] = useState("");
-    const [ator, setAtor] = useState("");
-    const [faixaEtaria, setFaixaEtaria] = useState("");
-    const [genero, setGenero] = useState("");
+export function FormFilmes() {
 
-    const cadastrarFilme = () => {
-        const novoFilme: Filme = {titulo, ator, faixaEtaria, genero};
+    const {handleSubmit, register} = useForm<Filme>();
 
-        listaFilmes.push(novoFilme);
+    const handleFormSubmit:SubmitHandler<Filme>=
+    (data) =>{
+        console.log(data);
+        saveDataFilmes(data);
+    }
 
-        setTitulo("");
-        setAtor("");
-        setFaixaEtaria("");
-        setGenero("");
-    };
-
-    return(
-        <Container> 
-            <Form>
-                <Form.Group className="mb-3" >
-                    <Form.Label>Título:</Form.Label>
-                        <Form.Control type="text" value={titulo} onChange={(e) => setTitulo(e.target.value)} />
+    return (
+        <section>
+            <Container className="mt-5">
+                <h2>Cadastrar Filme</h2>
+                <Form onSubmit={handleSubmit(handleFormSubmit)}>
+                <Form.Group className="mb-3">
+                    <Form.Label>Titulo</Form.Label>
+                    <Form.Control {...register("titulo")} type="text"/>
                 </Form.Group>
-            </Form>
-
-            <Form>
-                <Form.Group className="mb-3" >
-                    <Form.Label>Ator:</Form.Label>
-                        <Form.Control type="text" value={ator}  onChange={(e) => setAtor(e.target.value)} />
-                </Form.Group>
-            </Form>
-
-            <Form>
-                <Form.Group className="mb-3" >
-                    <Form.Label>Faixa Etária:</Form.Label>
-                        <Form.Control type="text" value={faixaEtaria} onChange={(e) => setFaixaEtaria(e.target.value)}/>
-                </Form.Group>
-            </Form>
-
-            <Form>
-                <Form.Group className="mb-3" >
-                    <Form.Label>Genêro:</Form.Label>
-                        <Form.Control type="text" value={genero} onChange={(e) => setGenero(e.target.value)}  />
-                </Form.Group>
-            </Form>
-
-            <Button variant="primary" type="button" onClick={cadastrarFilme}>
-            Cadastrar
-            </Button>
-
-        </Container>
+                <Form.Group className="mb-3">
+                    <Form.Label>Ator</Form.Label>
+                    <Form.Control {...register("ator")} type="text"/>
+                </Form.Group> 
+                <Form.Group className="mb-3">
+                    <Form.Label>Faixa Etaria</Form.Label>
+                    <Form.Control {...register("faixaEtaria")} type="text"/>
+                </Form.Group> 
+                <Form.Group className="mb-3">
+                    <Form.Label>Genêro</Form.Label>
+                    <Form.Control {...register("genero")} type="text"/>
+                </Form.Group>  
+                <Button variant="primary" type="submit">Cadastrar</Button>   
+                </Form>
+            </Container>
+        </section>
     );
+  
 }

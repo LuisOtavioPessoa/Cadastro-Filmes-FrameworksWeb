@@ -7,14 +7,21 @@ import { saveDataFilmes } from "../service/api";
 
 export function FormFilmes() {
 
-    const {handleSubmit, register, reset} = useForm<Filme>();
+    const {handleSubmit, register, reset, getValues} = useForm<Filme>();
 
     const handleFormSubmit:SubmitHandler<Filme>=
     (data) =>{
+        const {titulo, ator, faixaEtaria, genero} = getValues();
+
+        if (!titulo || !ator || !faixaEtaria || !genero){
+            console.error("Todos os campos devem ser preenchidos antes de cadastrar.");
+            return;
+        }
+
         console.log(data);
         saveDataFilmes(data);
         reset();
-    }
+    };
 
     return (
         <section>

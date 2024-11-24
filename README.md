@@ -38,7 +38,7 @@ O projeto segue boas práticas de desenvolvimento, com separação de responsabi
 ✔️ **Interface Dinâmica**  
    - Alternância entre as telas de inserção e listagem de filmes por meio da barra de navegação.
 
-## Pré-requisitos 
+## Pré-requisitos 📜
 Antes de começar, certifique-se de ter instalado:
 - Node.js (versão 20.17.0 ou superior)
 - Gerenciador de pacotes: NPM
@@ -50,4 +50,71 @@ Para instalar as dependências do projeto, execute o seguinte comando na pasta r
 ```bash
 npm install
 ```
+
+## Endpoints
+A aplicação consome a API de Filmes, que permite realizar operações CRUD (Criar, Ler, Atualizar, Deletar) em filmes. A seguir, estão os principais endpoints utilizados na API:
+1. **GET /filmes**
+- Descrição: Retorna uma lista de todos os filmes cadastrados na aplicação.
+- Resposta: Um array de objetos, onde cada objeto contém as informações de um filme.
+2. **POST /filmes**
+- Descrição: Cria um novo filme na aplicação.
+- Resposta: O filme criado, com os dados enviados e um identificador único.
+3. **GET /filmes/:id**
+- Descrição: Retorna as informações de um filme específico, com base no id fornecido.
+- Parâmetros:
+  - id: Identificador único do filme.
+- Resposta: Um objeto com os detalhes do filme correspondente ao id.
+4. **PUT /filmes/:id**
+- Descrição: Atualiza as informações de um filme existente, com base no id fornecido.
+- Parâmetros:
+  - id: Identificador único do filme a ser atualizado.
+- Resposta: O filme atualizado com os novos dados.
+5. **DELETE /filmes/:id**
+- Descrição: Remove um filme da aplicação, com base no id fornecido.
+- Parâmetros:
+  - id: Identificador único do filme a ser deletado.
+- Resposta: Mensagem de sucesso indicando que o filme foi removido.
+
+##  🛠 Estrutura do Projeto
+
+**Front-end**
+```bash
+├── node_modules/              # Diretório de dependências do Node.js
+├── public/                    # Arquivos estáticos
+├── src/                       # Código fonte do projeto
+│   ├── assets/                # Imagens, fontes, e outros arquivos estáticos
+│   ├── components/            # Componentes reutilizáveis do projeto
+│   ├── services/              # Arquivos de comunicação com a API e serviços
+│   ├── types/                 # Definições de tipos TypeScript
+│   ├── App.tsx                # Arquivo principal do aplicativo
+│   ├── main.tsx               # Ponto de entrada principal da aplicação
+│   └── vite-env.d.ts          # Declarações de tipos para o Vite
+├── package.json               # Arquivo de configuração do projeto e dependências
+├── package-lock.json          # Lockfile do npm (controla versões exatas de dependências)
+├── tsconfig.app.json          # Configuração do TypeScript para o aplicativo
+├── tsconfig.json              # Configuração global do TypeScript
+├── tsconfig.node.json         # Configuração do TypeScript para o Node.js
+└── index.html             # Arquivo HTML principal
+```
+**Back-end**
+```bash
+├── node_modules/              # Diretório de dependências do Node.js
+├── src/                       # Código fonte do projeto
+│   ├── controller/            # Controladores (lógica de negócios)
+│   │   └── FilmeController.js # Lógica para manipulação de filmes
+│   ├── db/                    # Conexão e manipulação do banco de dados
+│   │   └── db.js              # Configuração da conexão com o banco de dados
+│   ├── model/                 # Definições de modelos de dados (ORM ou Mongoose)
+│   │   └── Filme.js           # Modelo de dados para filmes
+│   ├── router/                # Definições de rotas da API
+│   │   └── FilmeRouter.js     # Rotas para gerenciamento de filmes
+│   └── index.js               # Arquivo de inicialização do servidor
+├── package.json               # Arquivo de configuração do projeto e dependências
+├── package-lock.json          # Lockfile do npm (controla versões exatas de dependências)
+```
+
+
+
+
+
 

@@ -1,15 +1,18 @@
-## Sistema de Cadastro de Filmes
+## Sistema de Cadastro de Filmes 🎬
 Este projeto é um sistema de gerenciamento de filmes desenvolvido para registrar, listar, editar e excluir informações de filmes. Ele possui uma interface amigável, com navegação intuitiva, permitindo que o usuário insira novos filmes, visualize a lista atual, edite detalhes existentes e remova registros indesejados.  
 O projeto segue boas práticas de desenvolvimento, com separação de responsabilidades e uso de componentes reutilizáveis.
 
 ## Tecnologias Utilizadas 🚀
 - **Front-end**:  
-  - React.js: para criação de componentes interativos e gerenciamento do estado.  
-  - React Hook Form: para facilitar a manipulação de formulários.  
-  - Bootstrap: para estilização e layout responsivo.  
+  - React.js: Utilizado para criação de componentes interativos e gerenciamento do estado da aplicação, proporcionando uma interface de usuário dinâmica e responsiva.
+  - React Hook Form: Facilita a manipulação de formulários, permitindo a validação e o gerenciamento de estado de forma simplificada.
+  - Bootstrap: Framework CSS para estilização e layout responsivo, garantindo uma interface amigável e acessível em dispositivos móveis e desktop.
 
 - **Back-end**:  
-  - API simulada com um servidor local configurado para lidar com as operações CRUD.  
+  - Node.js: Utilizado como plataforma para o servidor, proporcionando a execução de código JavaScript no lado do servidor.
+  - Express.js: Framework para Node.js que facilita a criação de APIs RESTful, proporcionando rotas e middleware para tratar as requisições HTTP.
+  - Sequelize: ORM utilizado para interagir com o banco de dados, facilitando a criação, leitura, atualização e deleção de dados com a ajuda de modelos definidos em JavaScript.
+  - CORS (Cross-Origin Resource Sharing): Middleware que permite que a API seja acessada de diferentes origens, útil em projetos com front-end e back-end separados.
 
 - **Banco de Dados**:  
   - MySQL: para armazenamento e gerenciamento das informações de filmes.  
@@ -51,7 +54,7 @@ Para instalar as dependências do projeto, execute o seguinte comando na pasta r
 npm install
 ```
 
-## Endpoints
+## Endpoints 🔗
 A aplicação consome a API de Filmes, que permite realizar operações CRUD (Criar, Ler, Atualizar, Deletar) em filmes. A seguir, estão os principais endpoints utilizados na API:
 1. **GET /filmes**
 - Descrição: Retorna uma lista de todos os filmes cadastrados na aplicação.
